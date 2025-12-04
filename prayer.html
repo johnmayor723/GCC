@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Green Leaves Christian Centre</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<style>
+    /* --- GLOBAL SPACING --- */
+section {
+  padding: 60px 5%;
+  font-family: "Inter", sans-serif;
+  color: #1a1a1a;
+}
+
+/* ========================
+   WELCOME HEADER SECTION
+======================== */
+.welcome-section {
+  text-align: center;
+  padding-top: 80px;
+}
+
+.welcome-section h1 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.welcome-section p {
+  font-size: 18px;
+  color: #444;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ========================
+   RECENT VIDEOS SECTION
+======================== */
+.videos-section h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Video card */
+.video-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+
+.video-card .thumb {
+  background: #dfe6f2;
+  height: 180px;
+  position: relative;
+}
+
+.video-card .duration {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: black;
+  color: white;
+  padding: 4px 8px;
+  font-size: 13px;
+  border-radius: 4px;
+}
+
+.video-card h3 {
+  padding: 15px 15px 5px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.video-card .meta {
+  padding: 0 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Pagination */
+.pagination {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.pagination span {
+  display: block;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.pages {
+  display: inline-flex;
+  gap: 10px;
+}
+
+.pages button {
+  padding: 10px 18px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.pages .active {
+  background: #2f6fff;
+  color: white;
+  border-color: #2f6fff;
+}
+
+/* ========================
+   SUBSCRIBE SECTION
+======================== */
+.subscribe-section {
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.subscribe-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.subscribe-section p {
+  max-width: 500px;
+  margin: 0 auto 30px;
+  color: #444;
+}
+
+.youtube-btn {
+  display: inline-flex;
+  align-items: center;
+  background: #e40000;
+  color: white;
+  padding: 14px 28px;
+  font-size: 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  gap: 10px;
+}
+
+.youtube-btn .icon {
+  font-size: 20px;
+}
+
+/* ========================
+        RESPONSIVE
+======================== */
+@media (max-width: 600px) {
+  .welcome-section h1 {
+    font-size: 28px;
+  }
+  
+  .videos-section h2,
+  .subscribe-section h2 {
+    font-size: 26px;
+  }
+
+  .video-card .thumb {
+    height: 160px;
+  }
+}
+
+</style>
+<body>
+
+    <!-- MOBILE DRAWER -->
+    <div class="mobile-drawer" id="drawer">
+        <button class="close-drawer" id="closeDrawer">✖</button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="events.html">Events</a>
+        <a href="watch.html">Watch</a>
+        <a href="connect.html">Connect</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="register.html" class="drawer-register-btn">Member Registration</a>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="navbar fade-in">
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="logo.png" class="logo" alt="Church Logo">
+                <span class="logo-text">Green Leaves Christian center</span>
+            </div>
+
+            <!-- DESKTOP MENU -->
+            <nav class="menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="events.html">Events</a>
+                <a href="watch.html">Watch</a>
+                <a href="connect.html">Connect</a>
+                <a href="contact.html">Contact Us</a>
+                 <a href="give.html" class="give-btn">Give</a>
+                <button class="register-btn">Member Registration</button>
+            </nav>
+
+            <!-- MOBILE ICON -->
+            <button class="hamburger" id="openDrawer">
+                ☰
+            </button>
+        </div>
+    </header>
+
+  <!-- ===========================
+     WELCOME HEADER SECTION
+=========================== -->
+<section class="prayer-section" style="max-width: 900px; margin: 0 auto;">
+
+    <!-- Page Title -->
+    <h1 style="font-size: 42px; font-weight: 800; text-align: center; padding-top: 120px;">
+        Prayer Requests & Testimonies
+    </h1>
+
+    <p style="font-size: 18px; text-align: center; color: #555; max-width: 700px;margin-top: 20px;">
+        Share your prayer needs or testify about God's faithfulness in your life. 
+        Your sharing encourages and strengthens our community of faith.
+    </p>
+
+    <!-- Top Banner -->
+    <div class="header-banner" 
+         style="background-image: url('your-header-image.jpg'); 
+                background-size: cover;
+                background-position: center;
+                padding: 10px 10px;
+                text-align: center;
+                border-radius: 14px;
+                color: #434141;">
+        <h2 style="font-size: 32px; font-weight: 800; margin: 0;">
+            Prayer Request Form
+        </h2>
+    </div>
+
+    <br><br>
+
+    <!-- Type Selector -->
+    <label style="font-weight: 600;">What would you like to share?</label>
+    <select id="typeSelector" 
+            style="width: 100%; padding: 18px; border-radius: 12px; border: 1px solid #d3d8ef; background: #e8edff;">
+        <option value="prayer">Prayer Request</option>
+        <option value="testimony">Testimony</option>
+    </select>
+
+    <br><br>
+
+    <!-- PRAYER REQUEST SECTION -->
+    <div id="prayerSection">
+
+        <h3 style="font-weight: 700;margin-bottom: 20px;">Prayer Request Details</h3>
+
+        <label>Prayer Request Title *</label>
+        <input type="text" placeholder="Brief title for your prayer request"
+               style="width: 100%; padding: 18px; border-radius: 12px; border: 1px solid #d3d8ef; background: #e8edff;">
+
+        <br><br>
+
+        <label>Prayer Request Details *</label>
+        <textarea placeholder="Please share your prayer request in detail. Your request will be treated with care and confidentiality..."
+                  style="width: 100%; height: 180px; padding: 18px; border-radius: 12px; border: 1px solid #d3d8ef; background: #e8edff;"></textarea>
+
+        <br><br>
+
+        <label><input type="checkbox"> Keep my identity anonymous</label><br>
+        <label><input type="checkbox"> This is an urgent prayer request</label><br>
+        <label><input type="checkbox"> You consent to share this content with the church community</label>
+
+        <br><br>
+
+        <button style="padding: 16px 28px; background: #1862ff; color: #fff; border: none; border-radius: 12px; font-size: 16px;">
+            Submit Prayer Request →
+        </button>
+    </div>
+
+    <!-- TESTIMONY SECTION -->
+    <div id="testimonySection" style="display: none;">
+
+        <h3 style="font-weight: 700;margin-bottom: 20px;">Your Testimony</h3>
+
+        <label>Testimony Title *</label>
+        <input type="text" placeholder="Brief title for your testimony"
+               style="width: 100%; padding: 18px; border-radius: 12px; border: 1px solid #d3d8ef; background: #e8edff;">
+
+        <br><br>
+
+        <label>Your Testimony *</label>
+        <textarea placeholder="Share your testimony and how God has worked in your life. Your story can inspire and encourage others..."
+                  style="width: 100%; height: 180px; padding: 18px; border-radius: 12px; border: 1px solid #d3d8ef; background: #e8edff;"></textarea>
+
+        <br><br>
+
+        <label><input type="checkbox"> Keep my identity anonymous</label><br>
+        <label><input type="checkbox"> You consent to share this content with the church community</label>
+
+        <br><br>
+
+        <button style="padding: 16px 28px; background: #1862ff; color: #fff; border: none; border-radius: 12px; font-size: 16px;">
+            Submit Testimony →
+        </button>
+    </div>
+
+</section>
+
+<script>
+    // Toggle Form Sections
+    const selector = document.getElementById("typeSelector");
+    const prayer = document.getElementById("prayerSection");
+    const testimony = document.getElementById("testimonySection");
+
+    selector.addEventListener("change", function () {
+        if (this.value === "prayer") {
+            prayer.style.display = "block";
+            testimony.style.display = "none";
+        } else {
+            prayer.style.display = "none";
+            testimony.style.display = "block";
+        }
+    });
+</script>
+
+<footer class="footer">
+  <div class="footer-container">
+    
+    <!-- LEFT COLUMN -->
+    <div class="footer-col footer-about">
+      <div class="footer-logo">
+        <img src="logo.png" alt="Church Logo">
+        <h3>Green Leaves Christian Centre </h3>
+      </div>
+
+      <p class="footer-text">
+        RCCG green leaves Christian Centre is a faith-driven community committed to spreading the love of Christ.
+        Our vision is to transform lives through passionate worship, biblical teaching, and impactful outreach. We strive
+        to create a welcoming space where individuals and families can grow in faith and purpose.
+      </p>
+
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <!-- CENTER COLUMN -->
+    <div class="footer-col footer-nav">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Grow your faith</a></li>
+        <li><a href="#">Watch</a></li>
+        <li><a href="#">Prayer & Testimony</a></li>
+        <li><a href="#">Monthly Declarations</a></li>
+        <li><a href="#">New Convert</a></li>
+      </ul>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="footer-col footer-membership">
+      <h4>Membership</h4>
+      <ul>
+        <li><a href="#">Connect</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Request for counseling</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT COLUMN -->
+    <div class="footer-col footer-contact">
+      <h4>Contact</h4>
+      <ul>
+        <li><i class="fas fa-phone"></i> +44 7886 250239</li>
+        <li><i class="fas fa-map-marker-alt"></i> 
+          114 Spring Road,<br> Wolverhampton WV4 6JT
+        </li>
+        <li><i class="fas fa-envelope"></i> info@greenleafchristiancenter.online</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="footer-bottom">
+    <div class="bottom-content">
+      <i class="fas fa-comment"></i>
+      <span>Let’s keep in touch.</span>
+      <a href="#">Become a member</a>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
